@@ -42,13 +42,6 @@ class OrderedSet
     @order << item
   end
 
-  def unshift(item)
-    return if include?(item)
-    @order.unshift(item)
-    reindex # Need to recalculate the positions.
-    self
-  end
-
   clone_method :+, :add!
   def add!(items)
     items.each do |item|
@@ -57,6 +50,21 @@ class OrderedSet
     self
   end
   alias concat add!
+
+  def unshift!(items)
+    need_reindex = false
+    items.each do |item|
+      next if include?(item)
+      @order.unshift(item)
+      need_reindex = true # Need to recalculate the positions.
+    end
+    reindex if need_reindex
+    self
+  end
+  
+  def unshift(item)
+    unshift!([item])
+  end
 
   clone_method :-, :subtract!
   def subtract!(items)
