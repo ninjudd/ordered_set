@@ -107,7 +107,7 @@ class OrderedSet
     delete(self[index], &block)
   end
 
-  [:sort, :reverse, :collect, :map, :compact, :reject].each do |method_name|
+  [:sort_by, :sort, :reverse, :collect, :map, :compact, :reject].each do |method_name|
     eval %{
       def #{method_name}!(*args, &block)
         new_order = @order.send(:#{method_name}, *args, &block)
