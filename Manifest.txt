@@ -1,7 +1,0 @@
-History.txt
-Manifest.txt
-README.txt
-Rakefile
-bin/ordered_set
-lib/ordered_set.rb
-test/test_ordered_set.rb
