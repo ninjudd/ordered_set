@@ -3,8 +3,6 @@ require 'deep_clonable'
 require 'forwardable'
 
 class OrderedSet
-  VERSION = "0.9.0"
-
   include Enumerable
   extend  Forwardable
 

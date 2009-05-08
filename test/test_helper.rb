@@ -1,10 +1,11 @@
+require 'rubygems'
 require 'test/unit'
-require File.dirname(__FILE__) + '/../lib/ordered_set'
+require 'shoulda'
+require 'mocha'
 
-class << Test::Unit::TestCase
-  def test(name, &block)
-    test_name = "test_#{name.gsub(/[\s\W]/,'_')}"
-    raise ArgumentError, "#{test_name} is already defined" if self.instance_methods.include? test_name
-    define_method test_name, &block
-  end
+$LOAD_PATH.unshift File.dirname(__FILE__) + "/../lib"
+$LOAD_PATH.unshift File.dirname(__FILE__) + "/../../deep_clonable/lib"
+require 'ordered_set'
+
+class Test::Unit::TestCase
 end
