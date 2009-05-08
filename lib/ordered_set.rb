@@ -86,6 +86,11 @@ class OrderedSet
     reindex
     self
   end
+
+  def reverse_reorder!(items)
+    return self if items.empty?
+    reverse!.reorder!(items).reverse!
+  end
   
   def to_ary
     @order.dup
