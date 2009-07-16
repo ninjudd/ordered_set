@@ -85,6 +85,14 @@ class OrderedSet
     self
   end
 
+  def shuffle!(seed = nil)
+    if defined?(ActiveSupport::Duration) and ActiveSupport::Duration === seed
+      seed = Time.now.to_i / seed.to_i
+    end
+    srand(seed) if seed
+    sort_by! { rand }
+  end
+
   def reverse_reorder!(items)
     return self if items.empty?
     reverse!.reorder!(items).reverse!
