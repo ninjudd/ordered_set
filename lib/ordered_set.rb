@@ -85,11 +85,7 @@ class OrderedSet
     self
   end
 
-  def shuffle!(seed = nil)
-    if defined?(ActiveSupport::Duration) and ActiveSupport::Duration === seed
-      seed = Time.now.to_i / seed.to_i
-    end
-    srand(seed) if seed
+  def shuffle!
     sort_by! { rand }
   end
 
