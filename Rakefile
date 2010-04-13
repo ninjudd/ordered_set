@@ -12,6 +12,7 @@ begin
     s.description = "Like Set except it maintains the order of objects"
     s.authors = ["Justin Balthrop"]
   end
+  Jeweler::GemcutterTasks.new
 rescue LoadError
   puts "Jeweler not available. Install it with: sudo gem install technicalpickles-jeweler -s http://gems.github.com"
 end
