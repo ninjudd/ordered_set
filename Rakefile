@@ -11,6 +11,7 @@ begin
     s.homepage = "http://github.com/ninjudd/ordered_set"
     s.description = "Like Set except it maintains the order of objects"
     s.authors = ["Justin Balthrop"]
+    s.add_dependency('deep_clonable', '>= 1.1.0')
   end
   Jeweler::GemcutterTasks.new
 rescue LoadError
