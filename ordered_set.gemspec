@@ -9,6 +9,7 @@ Gem::Specification.new do |gem|
   gem.description   = %q{Like Set except it maintains the order of objects}
   gem.summary       = gem.description
   gem.homepage      = "https://github.com/ninjudd/ordered_set"
+  gem.license       = 'MIT'
 
   gem.add_development_dependency 'shoulda', '3.0.1'
   gem.add_development_dependency 'mocha'
